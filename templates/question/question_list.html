@@ -1,0 +1,20 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #3980f4; font-size: 2em;">Question List</h2>
+        <div class="row">
+            {% for question in questions %}
+                <div class="col-md-4 mb-4">
+                    <div class="shadow p-4 rounded" style="background-color: #f0f0f0; border-radius: 10px;">
+                        <h3 style="color: #080808;">{{ question.name }}</h3>
+                        <p style="color: #000000;">Quiz: {{ question.set.quiz.name }}</p>
+                        <a href="{% url 'question_detail' question.pk %}" class="btn btn-primary">View Details</a>
+                        <a href="{% url 'delete_question' question.pk %}" class="btn btn-danger">Delete</a>
+
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

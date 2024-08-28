@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #0084ff; font-size: 2em;">Quiz: {{ quiz.title }}</h2>
+        <div class="shadow p-4 rounded" style="background-color: #f0f0f0; border-radius: 10px;">
+            <div class="mb-3">
+                <strong style="color: #000000;">Nomi:</strong> {{ quiz.name }}
+            </div>
+            <div class="mb-3">
+                <strong style="color: #0b0b0b;">Muallifi:</strong> {{ quiz.author }}
+            </div>
+            <div class="mb-3">
+                <strong style="color: #0d0d0d;">Savollar soni:</strong> {{ quiz.amount }} ta
+            </div>
+        </div>
+    </div>
+{% endblock %}

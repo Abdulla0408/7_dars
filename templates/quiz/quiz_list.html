@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <div class="container">
+        <h2 class="text-center mb-4" style="color: #3980f4; font-size: 2em;">Quiz List</h2>
+        <div class="row">
+            {% for quiz in quizzes %}
+                <div class="col-md-4 mb-4">
+                    <div class="shadow p-4 rounded" style="background-color: #f0f0f0; border-radius: 10px;">
+                        <h3 style="color: #080808;">{{ quiz.name }}</h3>
+                        <p style="color: #000000;">Yaratuvchi: {{ quiz.author }}</p>
+                        <p style="color: #000000;">Testlar ro'yxati: {{ quiz.amount }} ta</p>
+                        <a href="{% url 'read_quiz' quiz.pk %}" class="btn btn-primary">Read Quiz</a>
+                        <a href="{% url 'question_create' quiz.pk %}" class="btn btn-success">Create Question</a>
+                        <a href="{% url 'question_list' %}" class="btn btn-info">View Questions</a>
+
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

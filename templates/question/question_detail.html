@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4" style="color: #3980f4; font-size: 2.5em; font-weight: bold;">{{ question.name }}</h2>
+        <div class="card shadow p-4 rounded" style="background-color: #f0f0f0; border-radius: 10px;">
+            <p class="lead">{{ question.name }}</p>
+            <ul class="list-group">
+                {% for option in options %}
+                    <li class="list-group-item d-flex justify-content-between">
+                        {{ option.name }}
+                        <a href="{% url 'delete_option' option.pk %}" class="btn btn-sm btn-danger">O'chirish</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+{% endblock %}
